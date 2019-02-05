@@ -13,10 +13,14 @@ library(knitr)
 
 ```
 
-#Set Up
-
+#Set Up 
 - Go to https://github.com and make sure you are logged in
 - Open RStudio 
+
+```{r out.width= "90%", echo=FALSE}
+include_graphics("volc.png")
+```
+
 
 # Agenda
 
