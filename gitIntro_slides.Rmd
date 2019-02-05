@@ -1,6 +1,7 @@
 ---
-title: 'Intro to Git and R'
-author: "Laura Brugger"
+title: 'Git going with GitHub' 
+date: Saturday, February 9, 2019
+author: "Laura J. Brugger, Saint Louis University"
 output:
   slidy_presentation
 ---
@@ -12,60 +13,96 @@ library(knitr)
 
 ```
 
-# Outline: Intro to Git and R
+#Set Up
+
+- Go to https://github.com and make sure you are logged in
+- Open RStudio 
+
+# Agenda
 
 1. Why Git and GitHub? 
-2. Git Workflow 
-3. Benefits
-4. Using RStudio and GitHub to: 
-    * make a repository on GitHub
-    * make local changes in RStudio
-    * make remote changes on GitHub
+2. Traditional Workflow vs. Git Workflow
+3. Make a repository on GitHub
+4. Make local changes in RStudio
+5. Make remote changes on GitHub
+6. Pull it all together!
 
 # Key Questions
 - How do you organize files?
 - Do you keep different versions of files as your work progresses?
 - Could you find your files in 5 years?
 - Could you open them? 
-- Do you backup files? 
+- Do you backup your files? 
 
 # Why Git and GitHub?
 
 - **Git**: version control system
-    - manages the evolution of a set of files- called a **repository**
-    - a **repository** is a top-level directory that has Git version control enabled
-    - think of an amped up "Track Changes"
-    - data scientists adopted for managing data, figures, reports, and source code
+    - Manages the evolution of a set of files- called a **repository**
+    - A **repository** is a top-level directory that has Git version control enabled
+    - Think of it like an amped up "Track Changes"
+    - Data scientists use for managing data, figures, reports, and source code
 
 - **GitHub**: the hosting service for Git-based projects
-    - think of an amped up "DropBox"
-    - publicity and shareability
-    - collaboration
+    - Think of an amped up "DropBox"
+    - Publicity and shareability
+    - Collaboration
     
-# The Git Workflow
+# The Typical Workflow vs. Git Workflow
+
+
 ```{r echo=FALSE}
 include_graphics("workflow.png")
+```
+
+- "Why the heck did I save all of these?"
+
+- **Commits** are snapshots that are saved at particular points in time
+
+- **Commit messages** require you to annotate your changes
+
+# Git Workflow
+
+```{r echo=FALSE}
+include_graphics("d1.png")
 
 ```
 
-<center>
-![](workflow.png)
+```{r echo=FALSE}
+include_graphics("d2.png")
+
+```
+
+```{r echo= FALSE}
+include_graphics("d3.png")
+```
 
 
+# Git Workflow
+```{r echo=FALSE}
+include_graphics("timeline.png")
+```
 
-# What's the Payoff? 
+
+# Git Workflow
+
+```{r echo=FALSE}
+include_graphics("gitwork.png")
+```
+
+# Let's Try! 
 
 # Make a repo on GitHub
-- Go to *https://github.com* and make sure you are logged in
-- Click green "New repository" button
+
+- Go to https://github.com and make sure you are logged in
+- Click green **"`New Repository`"** button
 - Fill this in: 
-    + Repository name: `volcanoRepo` (whatever you want!)
+    + Repository name: **`volcanoRepo`** (whatever you want!)
     + Description: "This volcano repo contains some great volcano info" (*some text is good for the README*)
     + Public
     + YES - Initialize this repository with a README
 - Accept defaults for everything else
-- Click green **"Create repository"** button
-- Copy the HTTPS clone URL via the green **"Clone or Download"** button
+- Click green **"`Create Repository`"** button
+- Copy the HTTPS clone URL via the green **"`Clone or Download`"** button
 
 #Clone the new GitHub repo to your computer via RStudio
 
@@ -76,49 +113,81 @@ include_graphics("workflow.png")
     + Pay attention to where Project will be saved
     + Click "Create Project"
 
-- Should now be in a new local RStudio Project that represents what we just created on GitHub including the `README.md` file
+- Should now be in a new local RStudio Project that represents what we just created on GitHub including the **`README.md`** file
+
+- Take a look around. Compare RStudio files and GitHub repo.
 
 #Let's make some local changes!
 
-- From RStudio, modify the `README.md` file by adding the line "This is a line from RStudio".
+- From RStudio, modify the **`README.md`** file by adding a line of text. 
+    + i.e. "Seven volcanoes have permanent lava lakes".
 - Save! 
-- Commit these changes to your local repo. How? 
+- Commit these changes to your local repo from the terminal. How? 
 - In the Rstudio Terminal: 
 ```{r}
 # git add -A
-# git commit - m
+# git commit -a -m "[commit message]"
+  ##The commit message is your own annotation
+  ##For example "Edited readme to include volcano info"
 # git push origin master
 ```
    
 - Go back to your browser and refresh
-- We should see our new "This is a line from RStudio" in the README.
-- Click on "commits" to see one with your commit message. 
-- Cool, eh?
+- We should see our new text included in the **`README`**.
+- Click **`"Commits"`** to see your commit message history. 
+- Cool, huh?
 
 
 #Let's make some local changes in another way!
-- From RStudio, modify the `README.md` file by adding a line of text such as:*"Erta Ale, Ambrym, Mount Yasur, Mount Erebus, Kilauea, Nyiragongo, and Masaya are volcanoes with persistent lava lakes"*. Save!
-- Commit these changes to your local repo. How? 
+
+- From RStudio, make a new modification to the **`README.md`** file by adding a new line of text. 
+    + i.e. These volcanoes include Erta Ale, Ambrym, Mount Yasur, Mount Erebus, Kilauea, Nyiragongo, and Masaya. 
+- Save!
+- Commit these changes to your local repo from the Git panel. How? 
     + Click the "Git" tab in the upper right pane
     + Check "Staged" box for any files whose modifications you want to commit
     + Click "Commit"
-    + Type a message in the "Commit message," such as "commit from RStudio- point and click style"
-    + Click "Commit"
+    + Type your commit message
+    + Click "Commit" again
 - Push local changes to GitHub
     + Click green "Push" button to send local changes to GitHub
-- Refresh browser and confirm local changes propated to remote
-Go back to your browser and refresh
+- Refresh browser and confirm local changes propagated 
 
-#Changes on GitHub!
-- From your browser, click on the README.md file
+#Let's make remote changes from GitHub!
+- From your browser, click on the **`README.md`** file
 - Click on the pencil for "edit this file"
-- Add a line to this file, such as "We can make edits from GitHub"
-- Edit the commit message in "commit changes"
-- Click the green "Commit changes" button
-- Back to *RStudio* 
-    + check out your README.md
-    + Click the blue *Pull* button
-    + Check out the README.md again
+- Add a new line of text to this file
+    + i.e. Mauna Loa is the largest volcano on Earth.
+- Edit the commit message 
+- Click the green **`"Commit Changes"`** button
+- Back to **RStudio** 
+    + Check out your **`README.md`**
+    + Click the blue **`"Pull"`** button
+    + Check out the **`README.md`** again
 
-#Testing R Markdown
+# Testing R Markdown
 
+# Contributors & References
+
+- Chris Prener, PhD, Professor of Sociology, Saint Louis University
+    + https://github.com/chris-prener
+- https://happygitwithr.com
+- https://education.github.com/
+
+# Appendix A: Set Up
+
+- Register an account with GitHub
+    + https://github.com 
+- Install/update RStudio
+- Install Git
+    + https://git-scm.com/downloads 
+- Introduce yourself to Git
+
+```{r}
+# install if needed (only do this once)
+# install.packages ("usethis")
+
+#library(usethis)
+#use_git_config(user.name = "Jane Doe", user.email= "jane@example.org")
+
+```
