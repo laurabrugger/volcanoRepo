@@ -169,14 +169,22 @@ include_graphics("gitwork.png")
     + Click the blue **`"Pull"`** button
     + Check out the **`README.md`** again
 
-# Testing R Markdown
+# Testing out RStudio
+- From your browser, go to https://github.com/laurabrugger/volcanoRepo
+- Click the green 'clone or download` button, and download to your desktop
+- Move my repo inside your repo
+-`Open`volcanoes.Rmd` file
+- We'll switch over to the .rmd for instructions 
+
+#Questions? 
+
 
 # Contributors & References
-
 - Chris Prener, PhD, Professor of Sociology, Saint Louis University
     + https://github.com/chris-prener
 - https://happygitwithr.com
 - https://education.github.com/
+- laura.brugger37@gmail.com
 
 # Appendix A: Set Up
 

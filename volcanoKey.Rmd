@@ -5,12 +5,14 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The following packages are required. If not already installed, do so using `install.packages`: 
+The following packages are required. Install using `install.packages`
 `ggplot2`
 `dplyr`
+`purrr`
+`knitr`
 `readxl`
 
 ##Visualizing Elevation of Volcanoes with Persistent Lava Lakes
@@ -77,10 +79,10 @@ Save, add, commit, push!
 #git commit push origin
 ```
 
-Try it on your own and make a graph of the last known eruption for each volcano. If you'd like, go ahead and save, add, commit, and push changes. 
+Try it on your own and make a graph of the last known eruption for each volcano. 
 
 ```{r}
-ggplot(data= , aes(x= , y= , fill= )) +
+ggplot(data=lavaData, aes(x=volcano, y=eruption, fill= volcano)) +
   geom_bar(stat = "identity")
 
 ```
@@ -101,14 +103,14 @@ eruptionData %>%
   filter (volcano != "Mauna Loa") -> lavaEruptData
 ```
 
-
 Using `ggplot`, make a scatterplot that displays the 5 most recent eruptions of volcanoes with persistent lava lakes. Give your graph a title, a subtitle, and add labels to the x and y axes. 
+
 ```{r}
-ggplot(data=lavaEruptData, aes(y=, x=, color= volcano, position="dodge")) +
+ggplot(data=lavaEruptData, aes(y=volcano, x=eruption, color= volcano, position="dodge")) +
   geom_point() + 
-  ggtitle("", subtitle="") + 
-  ylab("") + 
-  xlab ("") + 
+  ggtitle("Recent Eruptions of Volcanoes with Persistent Lava Lakes", subtitle="An R-Ladies Masterpiece") + 
+  ylab("Volcano") + 
+  xlab ("Year of Eruption") + 
   theme(legend.position="none")
   
 ```
