@@ -1,5 +1,5 @@
 ---
-title: "volcanoes"
+title: "Volcanoes"
 author: Laura Brugger
 output: html_document
 ---
@@ -8,10 +8,108 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+The following packages are required. Install using `install.packages`
+`ggplot2`
+`dplyr`
+`purrr`
 
-##Volcanoes
+##Visualizing Elevation of Volcanoes with Persistent Lava Lakes
+
+First, let's practice making a data frame. This data frame will include 7 volcanoes with persistent lava lakes plus the tallest volcano in the world, their location, their elevation, and their most recent known eruption. 
 
 ```{r}
-##Insert your brilliant WORKING code here
+volcano <- c('Erta Ale', 'Ambrym', 'Mount Yasur', 'Mount Erebus', 'Kilauea', 'Nyiragongo', 'Masaya', 'Mauna Loa')
+location <- c('Ethiopia','Vanuatu','Vanuatu','Antarctica','United States', 'Democratic Republic of the Congo','Nicaragua', 'United States')
+elevationFt <- c(2011, 4377, 1184, 12448, 4091, 11385, 2083, 13678)
+lastKnownEruption <- c('2009', '2019', '2016', '2011', '2018', '2016', '2008', '1984')
 
+volcanoData <- data.frame(volcano, location, elevationFt, lastKnownEruption)
+```
+
+Create a bar chart to display the elevation of each volcano. 
+
+```{r}
+library(ggplot2)
+ggplot(data=volcanoData, aes(x=volcano, y=elevationFt, fill=volcano)) +
+  geom_bar(stat="identity") + 
+  ggtitle("Elevation of Volcanoes with Active Lava Lakes", subtitle="An R-Ladies Masterpiece") + 
+  ylab("Elevation (in feet)") + 
+  xlab ("Volcano") + 
+  theme(legend.position = "none")
+
+```
+
+But Wait! Mauna Loa does NOT have an active lava lake. Let's get rid of it. Before we do that, this is a good time to save, add, commit, and push our work to GitHub. Go to your terminal and enter the following: 
+
+```{r}
+#git -A
+#git -a -m "add initial lava lake bar chart" 
+  #Remember, our commit message is a breadcrumb for us to remember why we made this commit
+#git commit push origin
+
+```
+
+Use `filter` from the `dplyr` package to remove the volcano "Mauna Loa" and assign to a new dataframe called `lavaLake`. 
+
+```{r}
+library(dplyr)
+volcanoData %>%
+  filter (volcano != "Mauna Loa") -> lavaLake
+```
+
+Let's try again! Make a new bar chart with our new `lavaLake` data. 
+Let's also reorder from highest to lowest elevation. 
+
+```{r}
+ggplot(data=lavaLake, aes(x= reorder (volcano, -elevationFt), y=elevationFt, fill=volcano)) +
+  geom_bar(stat="identity") + 
+  ggtitle("Elevation of Volcanoes with Active Lava Lakes", subtitle="An R-Ladies Masterpiece") + 
+  ylab("Elevation (in feet)") + 
+  xlab ("Volcano") + 
+  theme(legend.position="none")
+```
+
+Save, add, commit, push! 
+
+```{r}
+#git -A
+#git -a -m "add revised lava lake bar chart that omits Mauna Loa" 
+#git commit push origin
+```
+
+Try it on your own and make a graph of the last known eruption fro each volcano. 
+
+```{r}
+ggplot(data=lavaLake, aes(x=volcano, y=lastKnownEruption, fill= volcano)) +
+  geom_bar(stat = "identity")
+
+```
+
+```{r}
+library(readxl)
+eruptions <- read_xlsx("volcano.xlsx")
+```
+
+Let's get rid of Mauna Loa again. 
+```{r}
+eruptions %>%
+  filter (volcano != "Mauna Loa") -> lavaEruption
+```
+
+```{r}
+ggplot(data=lavaEruption, aes(y=volcano, x=eruption, color= volcano, position="dodge")) +
+  geom_point() + 
+  ggtitle("Recent Eruptions of Volcanoes with Persistent Lava Lakes", subtitle="An R-Ladies Masterpiece") + 
+  ylab("Volcano") + 
+  xlab ("Year of Eruption") + 
+  theme(legend.position="none")
+  
+```
+
+You know the drill: Save, add, commit, push! 
+
+```{r}
+#git -A
+#git -a -m "added new section to include recent eruption scatterplot" 
+#git commit push origin
 ```
