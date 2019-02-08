@@ -15,6 +15,13 @@ The following packages are required. Install using `install.packages`
 `knitr`
 `readxl`
 
+##Set Up
+- https://github.com/laurabrugger/volcanoRepo 
+  + volcano.index (slides)
+-Rstudio
+  +volcanoKey.rmd
+  +volcano.rmd (class slides)
+
 ##Visualizing Elevation of Volcanoes with Persistent Lava Lakes
 
 First, let's practice making a data frame. This data frame will include 7 volcanoes with persistent lava lakes plus the tallest volcano in the world, their location, their elevation, and their most recent known eruption. 
@@ -83,7 +90,10 @@ Try it on your own and make a graph of the last known eruption for each volcano.
 
 ```{r}
 ggplot(data=lavaData, aes(x=volcano, y=eruption, fill= volcano)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") + 
+  ylab("Last Known Eruption") + 
+  xlab ("Volcano") +
+  theme(legend.position="none")
 
 ```
 

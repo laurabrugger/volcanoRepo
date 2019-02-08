@@ -16,7 +16,11 @@ library(knitr)
 #Set Up 
 - Go to https://github.com and make sure you are logged in
 - Open RStudio 
-
+- If you haven't already, install the necessary packages for today's workshop using `install.packages(""): 
+    + ggplot2
+    + dplyr
+    + readxl
+    
 ```{r out.width= "90%", echo=FALSE}
 include_graphics("volc.png")
 ```
@@ -100,8 +104,8 @@ include_graphics("gitwork.png")
 - Go to https://github.com and make sure you are logged in
 - Click green **"`New Repository`"** button
 - Fill this in: 
-    + Repository name: **`volcanoRepo`** (whatever you want!)
-    + Description: "This volcano repo contains some great volcano info" (*some text is good for the README*)
+    + Repository name: **`myRepo`** (whatever you want!)
+    + Description: "This repo will contain some great volcano info" (*some text is good for the README*)
     + Public
     + YES - Initialize this repository with a README
 - Accept defaults for everything else
@@ -169,12 +173,18 @@ include_graphics("gitwork.png")
     + Click the blue **`"Pull"`** button
     + Check out the **`README.md`** again
 
-# Testing out RStudio
+# Pulling it all together
 - From your browser, go to https://github.com/laurabrugger/volcanoRepo
 - Click the green 'clone or download` button, and download to your desktop
 - Move my repo inside your repo
--`Open`volcanoes.Rmd` file
+- Open the `volcanoes.Rmd` file
 - We'll switch over to the .rmd for instructions 
+
+#Summary
+- Git is a version control system that manages the evolution of a set of files
+- GitHub is a hosting service for Git-based projects
+- Organization, preserving work over time, backup, collaboration
+- Overall efficiency 
 
 #Questions? 
 
@@ -184,7 +194,8 @@ include_graphics("gitwork.png")
     + https://github.com/chris-prener
 - https://happygitwithr.com
 - https://education.github.com/
-- laura.brugger37@gmail.com
+- My contact info:
+    + laura.brugger37@gmail.com
 
 # Appendix A: Set Up
 
