@@ -73,7 +73,7 @@ Save, add, commit, push!
 
 ```{r}
 #git add -A
-#git -a -m "add revised lava lake bar chart that omits Mauna Loa" 
+#git commit -a -m "add revised lava lake bar chart that omits Mauna Loa" 
 #git push origin master
 ```
 
@@ -117,6 +117,6 @@ You know the drill: Save, add, commit, push!
 
 ```{r}
 #git -A
-#git -a -m "added new section to include recent eruption scatterplot" 
-#git commit push origin
+#git commit -a -m "added new section to include recent eruption scatterplot" 
+#git push origin master
 ```

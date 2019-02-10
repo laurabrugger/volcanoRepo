@@ -118,7 +118,7 @@ include_graphics("gitwork.png")
     + File > New Project > Version Control > Git. 
     + In "Repository URL", paste the URL of your new GitHub repo.
     + Accept default project directory name
-    + Pay attention to where Project will be saved
+    + Pay attention to where project will be saved
     + Click "Create Project"
 
 - Should now be in a new local RStudio Project that represents what we just created on GitHub including the **`README.md`** file
@@ -181,10 +181,11 @@ include_graphics("gitwork.png")
 - We'll switch over to the .rmd for instructions 
 
 #Summary
-- Git is a version control system that manages the evolution of a set of files
-- GitHub is a hosting service for Git-based projects
-- Organization, preserving work over time, backup, collaboration
-- Overall efficiency 
+- Git Workflow
+    + download/clone repository
+    + edit -> save -> commit -> push
+- Pull from remote; push to remote or local
+    + don't mistake "PULL REQUEST"
 
 #Questions? 
 

@@ -1,6 +1,5 @@
 # Git & R Tutorial
-***
-##Repository Contents
+#Repository Contents
 
 This repository contains files for: 
 
@@ -11,5 +10,5 @@ This repository contains files for:
 * `docs` - tutorial slides and images
 * `.gitignore`
 
-##Introduction
+#Introduction
 This tutorial introduces Git, GitHub, and `R`. 

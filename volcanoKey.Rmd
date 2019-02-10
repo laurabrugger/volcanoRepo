@@ -52,9 +52,9 @@ But Wait! Mauna Loa doesn't have an active lava lake. Let's get rid of it. Befor
 
 ```{r}
 #git -A
-#git -a -m "add initial lava lake bar chart" 
+#git commit -a -m "add initial lava lake bar chart" 
   #Remember, our commit message is a breadcrumb for us to remember why we made this commit
-#git commit push origin
+#git push origin master
 
 ```
 
@@ -82,8 +82,8 @@ Save, add, commit, push!
 
 ```{r}
 #git -A
-#git -a -m "add revised lava lake bar chart that omits Mauna Loa" 
-#git commit push origin
+#git commit -a -m "add revised lava lake bar chart that omits Mauna Loa" 
+#git push origin master
 ```
 
 Try it on your own and make a graph of the last known eruption for each volcano. 
@@ -129,6 +129,6 @@ You know the drill: Save, add, commit, push!
 
 ```{r}
 #git -A
-#git -a -m "added new section to include recent eruption scatterplot" 
-#git commit push origin
+#git commit -a -m "added new section to include recent eruption scatterplot" 
+#git push origin master
 ```
